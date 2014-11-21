@@ -19,3 +19,7 @@ Next features / testing
 -- Benchmark new column with TTL for better select / delete processing
 
 -- garbage collection to remove old TTL cached entries
+
+License:
+
+This extension is released under the GPLv3 (see core/components/mysqlcaching/docs/license.txt)
