@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model package="mysqlcaching" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" phpdoc-package="mysqlcaching" version="1.1">
+    <!-- Add stuff in here - currently ALL caching tables are manually added -->
+    <object class="Cache" table="cache" extends="xPDOObject">
+        <field key="key" dbtype="varchar" precision="255" null="false" />
+        <field key="added" dbtype="integer" attributes="unsigned" null="false" />
+        <field key="ttl" dbtype="integer" attributes="unsigned" null="false" />
+        <field key="data" dbtype="longblob" null="false" />
+
+
+        <index alias="PRIMARY" name="PRIMARY" primary="true" unique="true" type="BTREE">
+            <column key="key" length="" collation="A" null="false" />
+        </index>
+    </object>
+</model>

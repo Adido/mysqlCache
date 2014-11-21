@@ -1,0 +1,6 @@
+Changelog for mysqlcaching.
+
+mysqlcaching 1.0.0
+======================
+- Initial release.
+- Mysql Caching
