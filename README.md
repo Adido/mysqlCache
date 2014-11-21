@@ -1,4 +1,12 @@
-## Msyql caching Extra.
+## Mysql caching Extra.
+
+Installation:
+
+Install through either the MODX provider or extras.io provider, then set the cache system setting to "cache.xPDOMysqlCache"
+
+Caching will then be database backed.
+
+Although has been tested on MySQL no testing has been done on MSSQL or any other database types. But as long as LONGBLOB is supported - it should work OK
 
 Currently Implemented:
 
