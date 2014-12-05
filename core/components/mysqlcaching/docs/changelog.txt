@@ -3,6 +3,7 @@ Changelog for mysqlcaching.
 mysqlcaching 1.0.3
 ======================
 - Updated get function
+- Added license info to readme
 
 mysqlcaching 1.0.2
 ======================
