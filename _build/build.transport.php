@@ -16,7 +16,7 @@ set_time_limit(0);
 /* define package */
 define('PKG_NAME', 'mysqlCaching');
 define('PKG_ABBR', strtolower(PKG_NAME));
-define('PKG_VERSION', '1.0.0');
+define('PKG_VERSION', '1.0.3');
 define('PKG_RELEASE', 'pl');
 
 /* define sources */
@@ -70,15 +70,21 @@ $attr = array(
 );
 
 $vehicle = $builder->createVehicle($category,$attr);
+
 $vehicle->resolve('file',array(
     'source' => $sources['source_core'],
     'target' => "return MODX_CORE_PATH . 'components/';",
 ));
 
-$vehicle->resolve('file',array(
-    'source' => $sources['source_cache'],
-    'target' => "return MODX_CORE_PATH . 'xpdo/';",
+$vehicle->resolve('php',array(
+	'source' => $sources['resolvers'] . 'resolve.tables.php',
 ));
+$modx->log(modX::LOG_LEVEL_INFO,'Packaged in menu.');
+
+$vehicle->resolve('php',array(
+	'source' => $sources['resolvers'] . 'resolve.cache.php',
+));
+$modx->log(modX::LOG_LEVEL_INFO,'Packaged in cache.');
 
 $builder->putVehicle($vehicle);
 

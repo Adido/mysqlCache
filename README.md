@@ -2,7 +2,16 @@
 
 Installation:
 
-Install through either the MODX provider or extras.io provider, then set the cache system setting to "cache.xPDOMysqlCache"
+Install through either the MODX provider or extras.io provider, then set the "cache_handler" system setting to `cache.xPDOMysqlCache`
+
+You can also set the cache setting within the config options inside config.inc.php to:
+```
+$config_options = array (
+	'cache_handler' => 'cache.xPDOMysqlCache'
+);
+```
+
+During installation we move the "xpdomysqlcache.class.php" file from `core/components/mysqlcaching/model/xpdomysqlcache.class.php` to `core/xpdo/cache/xpdomysqlcache.class.php` This may fail due to file permissions (an error is displayed during install). If this happens please move the file manually.
 
 Caching will then be database backed.
 

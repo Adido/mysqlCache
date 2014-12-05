@@ -98,7 +98,8 @@ class xPDOMysqlCache extends xPDOCache {
 	    $r = $query->stmt->execute();
 	    if(!$r) return false;
 
-        $row = $r->fetch(PDO::FETCH_ASSOC);
+        $row = $query->stmt->fetch(PDO::FETCH_ASSOC);
+	    if(!$row) return false;
 
         // check TTL on data
         if($row["ttl"]) {
