@@ -1,5 +1,9 @@
 Changelog for mysqlcaching.
 
+mysqlcaching 1.0.4
+======================
+- Tweak for cache file move
+
 mysqlcaching 1.0.3
 ======================
 - Updated get function
