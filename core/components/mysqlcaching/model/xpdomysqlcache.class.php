@@ -120,7 +120,7 @@ class xPDOMysqlCache extends xPDOCache {
 		    $this->xpdo,
 		    $sql,
 		    array(
-			    ":key" => $this->key,
+			    ":key" => $this->key."%",
 		    ));
 	    if (!$query->prepare() || !$query->stmt->execute()) {
 		    return false;
